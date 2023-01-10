@@ -12,16 +12,21 @@ class Cars extends React.Component {
             model: "camry",
             number: 1,
           },
+          {
+            id: 2,
+            model: "accord",
+            number: 2,
+          },
         ],
         SUV: [
           {
-            id: 2,
+            id: 3,
             model: "escape",
             number: 1,
           },
         ],
       },
-      totalNumber: 2,
+      totalNumber: 4,
     },
   };
 
