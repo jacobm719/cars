@@ -1,7 +1,7 @@
 import React from "react";
-import { MyPureComponent } from "./Sedan";
+// import { MyPureComponent } from "./Sedan";
 
-class SUV extends MyPureComponent {
+class SUV extends React.Component {
   // shouldComponentUpdate(nextProps) {
   //   if (nextProps.SUV === this.props.SUV) {
   //     return false;

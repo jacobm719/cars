@@ -1,16 +1,17 @@
 import React from "react";
 
-export class MyPureComponent extends React.Component {
-  shouldComponentUpdate(nextProps, newState) {
-    if (true) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-}
+// export class MyPureComponent extends React.Component {
+//   shouldComponentUpdate(nextProps, newState) {
+//     if (true) {
+//       return false;
+//     } else {
+//       return true;
+//     }
+//   }
+// }
 
-class Sedan extends MyPureComponent {
+// class Sedan extends MyPureComponent {
+class Sedan extends React.Component {
   // shouldComponentUpdate(nextProps) {
   //   if (nextProps.Sedan === this.props.Sedan) {
   //     return false;

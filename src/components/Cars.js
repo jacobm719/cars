@@ -2,6 +2,34 @@ import React from "react";
 import Sedan from "./Sedan";
 import SUV from "./SUV";
 
+// class MyPureComponent extends React.Component {
+//   shouldComponentUpdate(nextProps, nextState) {
+//     if (nextProps === null || nextState === null) {
+//       if (nextProps === null && nextState === null) {
+//         return true;
+//       }
+//     } else {
+//       if (
+//         Object.keys(nextProps).length !== Object.keys(this.props) ||
+//         Object.keys(nextState).length !== Object.keys(this.state)
+//       ) {
+//         return true;
+//       }
+//       if (
+//         Object.keys(nextProps).every(([key, value]) => {
+//           return this.props[key] === value;
+//         }) &&
+//         Object.keys(nextState).every(([key, value]) => {
+//           return this.state[key] === value;
+//         })
+//       ) {
+//         return false;
+//       }
+//       return true;
+//     }
+//   }
+// }
+
 class Cars extends React.Component {
   state = {
     carsData: {
@@ -95,7 +123,17 @@ class Cars extends React.Component {
             //   }
             // }),
           },
-          totalNumber: prev.carsData.totalNumber - 1,
+          totalNumber:
+            Object.keys(prev.carsData.cars).reduce(
+              (totalNumber, category) =>
+                totalNumber +
+                prev.carsData.cars[category].reduce(
+                  (totalNumOfEachCar, eachCar) =>
+                    totalNumOfEachCar + eachCar.number,
+                  0
+                ),
+              0
+            ) - 1,
         },
       };
     });
